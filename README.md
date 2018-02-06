@@ -1,3 +1,5 @@
+<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+
 # Spinning-cylinders-in-a-B-field #
 
 A simulation of a conducting metal cylinder rotating inside of a constant magnetic field, developed initially just to see how the 
