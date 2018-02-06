@@ -1,5 +1,3 @@
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
-
 # Spinning-cylinders-in-a-B-field #
 
 A simulation of a conducting metal cylinder rotating inside of a constant magnetic field, developed initially just to see how the 
@@ -8,6 +6,8 @@ shown and a lot of mid-depth analysis into the convergence and stability of fini
 
 Code initially developed as a peice of coursework in MATLAB but now extended to incorporate more features such as stablility and
 convergence analysis, a shift into Python+Fortran and some better looking plots. 
+
+<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
 
 ## Summary of abilities ##
 - Solves a system of coupled Partial differential equations in 1-D with Finite difference methods
