@@ -5,15 +5,16 @@ magnetic field lines (contours of the B-field) change over time due to the rotat
 shown and a lot of mid-depth analysis into the convergence and stability of finite difference methods included.
 
 Code initially developed as a peice of coursework in MATLAB but now extended to incorporate more features such as stablility and
-convergence analysis, a shift into Python+Fortran and some better looking plots. 
+convergence analysis, (eventually) a shift into Python+Fortran and some better looking plots. 
 
 <a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
 
 ## Summary of abilities ##
+
 - Solves a system of coupled Partial differential equations in 1-D with Finite difference methods
 - Shows the distortion of magnetic field lines via polar contour plots
 - Performs numerical analysis on the rate of convergence of solutions and the stability of Finite difference methods
-- Demonstrates the use of F2PY for vastly improvign performance of iterative code whilst handling all higher-level problems in Python
+- (eventually will) Demonstrates the use of F2PY for vastly improved performance of iterative code whilst handling all higher-level problems in Python
 
 ## Requirements and Installation ## 
 
@@ -38,7 +39,9 @@ free to. I'm still learning a lot about computational PDE's!
 ## Credits ##
 
 The method for creating contour plots in a polar coordinate system in MATLAB was provided by the Mathworks support team on their "MATLAB 
-answers" forum. Without them the displays wouldn't look nearly as good!
+answers" forum. Without them the displays wouldn't look nearly as good! the questions themselves came from Prof. J. Mestel's 
+Computational PDE's course taught at Imperial College London (2018), so all credit for the problem itself and the inspiration goes to
+him.
 
 ## License ##
 
