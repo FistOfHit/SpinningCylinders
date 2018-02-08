@@ -1,3 +1,19 @@
+% Script to find relationship between h (space step size) and k (time step size)
+% to ensure stability of Finite difference methods used.
+%
+% Works by starting with a value of h from a range of values needing testing, and 
+% starts at a very small, almost certainly stable (for any reasonable value of h)
+% value of k. The solution is then calculated for these values of h and k and 
+% tested for stability by seeing if any value over all space has grown above 2
+% in magnitude (the reason for this is clear on analysing the PDE's). If the 
+% solution had begin to diverge clearly, end this iteration and store the highest 
+% stable value of k for this value of h. If not, then continue increasing the 
+% value of k and retest.
+%
+% Script produces an raw data plot and a log-log plot and performs Linear 
+% regression by least square method, to find (assumed) power law relationship
+% between h and k.
+
 
 % Define array of spatial step sizes
 num_space_steps = linspace(50, 200, 30);
@@ -57,7 +73,7 @@ xlabel('Log(space step size)');
 ylabel('Log(maximum time step size)');
 legend('Log-Log data', ['LR fitted line - gradient = ', num2str(grad_incept(2))]);
 
-grad_incept
+disp(grad_incept)
 
 
 
