@@ -1,9 +1,25 @@
+% Script to find power law relationship between convergence time of solution
+% (time taken to reach a steady state) and the parameter "n".
+%
+% Script works by chekcing if num_checked consecutive iterations of a and b
+% at certain points are within a certain tolerance of each other, defined by
+% "tol". The step sizes in time and space are present to a safe value and set
+% for accuracy to avoid the differnces between iterations being large due 
+% to error. After all the setup, a value of n is chosen, the FDM iterations
+% are run for num_checked time steps and then those iterations are tested
+% are tested against tolerance. If the differences are acceptable, then the 
+% number of time steps already passed is recorded and the next value of n is 
+% tested.
+%
+% Plots of the convergence time in both unscaled and log-log axis are made, 
+% with Linear regression by Least mean squares performed to find the underlying
+% power law relationship between the variables. 
 
 % Define tolerance 
 tol = 10^(-9);
 
 % Define array of n values
-n = linspace(0.16, 0.01, 30);
+n_values = linspace(0.16, 0.01, 30);
 
 % Setting up steps in r
 N = 100;
@@ -22,9 +38,11 @@ w(1:(N/2)) = linspace(0, 1, N/2);
 % w(1:0.5*N) = cos(linspace(0, pi, 0.5*N)) + sin(linspace(0, pi, 0.5*N));
 
 % Convergence times array
-conv_times = zeros(length(n), 1);
+conv_times = zeros(length(n_values), 1);
 
-for q = 1:length(n)
+for q = 1:length(n_values)
+
+    n = n_values(q);
     
     % Zero and re-zero a and b for each value of n
     a = zeros(N, num_checked);
@@ -44,13 +62,13 @@ for q = 1:length(n)
             r = h;
             for i = 2:N-1
 
-                a(i, j+1) = k*(n(q)*((1/h)*((1/h + 1/(2*r))*a(i+1, j)  ...
+                a(i, j+1) = k*(n*((1/h)*((1/h + 1/(2*r))*a(i+1, j)  ...
                                 + (1/h - 1/(2*r))*a(i-1, j))  ...
                                 - (2/(h^2) + 1/(r^2))*a(i, j))  ...
                                 + w(i)*b(i, j))  ...
                                 + a(i, j);
 
-                b(i, j+1) = k*(n(q)*((1/h)*((1/h + 1/(2*r))*b(i+1, j) ...
+                b(i, j+1) = k*(n*((1/h)*((1/h + 1/(2*r))*b(i+1, j) ...
                                  + (1/h - 1/(2*r))*b(i-1, j))  ...
                                  - (2/h^2 + 1/r^2)*b(i, j))  ...
                                  - w(i)*a(i, j))  ...
@@ -81,14 +99,14 @@ end
 
 % Plotting data with the fitted curve
 figure;
-plot(n, conv_times, '+');
+plot(n_values, conv_times, '+');
 title('Plot of time taken to converge for varying n');
 xlabel('n');
 ylabel('Time to converge');
 
 % Linear regression on log-log data
 log_y_data = log(conv_times);
-log_x_data = [ones(length(n), 1), transpose(log(n))];
+log_x_data = [ones(length(n_values), 1), transpose(log(n_values))];
 grad_incept = log_x_data\log_y_data;
 disp(['gradient = ', num2str(grad_incept(2)), ', y-intercept = ', num2str(grad_incept(1))]);
 
