@@ -1,10 +1,10 @@
-function[] = Plot_time(chosen_r, max_t, n)
-% Function to solve for a and b to plot values at a given distance over time for comp PDE's CW1 Q3
+function[] = Solve_intermediates(chosen_r, max_t, n)
+% Function to solve for a and b to plot values at a given distance over time.
 %
 % Input:
 % chosen_r = distance r at which a(t) and b(t) will be calculated
 % max_t = maximum value of time for which to solve for a and b to
-% n = parameter used to calculate a and b (described in CW as eta(?))
+% n = parameter used to calculate a and b (something to do with damping or conductance)
 %
 % Output: 
 % None.
@@ -15,7 +15,7 @@ function[] = Plot_time(chosen_r, max_t, n)
 % Function uses the same methods as Plot_fieldlines function to solve a and b (finite differences)
 % and instead plots values of a and b at a given input distance over the range of time input. This
 % essentially gives a qualitative view of when the values of a and b (and hence psi) stop changing
-% with time, allowing t_infinity to be found (as needed in Q3)
+% with time, allowing t_infinity to be found
 
     % Values for spatial discretisation
     N = 100;
@@ -39,7 +39,7 @@ function[] = Plot_time(chosen_r, max_t, n)
     % Alternate initial condition
     %w(1:(N/2)) = linspace(0, 1, N/2);
 
-    % Arrays for storing a and b over time for Q3
+    % Arrays for storing a and b over time
     a_t = zeros(M, 1);
     b_t = zeros(M, 1);
     
@@ -61,7 +61,7 @@ function[] = Plot_time(chosen_r, max_t, n)
                              - w(i)*a_old(i))  ...
                              + b_old(i);
                          
-            % Storing a and b over time for Q3
+            % Storing a and b over time
             a_t(j) = a_old(store_point); 
             b_t(j) = b_old(store_point); 
             
