@@ -31,12 +31,12 @@ institution, otherwise you can always adapt the code slightly and use it in GNU 
 
 The code built here find the value of:
 
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/7mlA8qP"><img src="https://i.imgur.com/7mlA8qP.png" title="source: imgur.com"/></a>
 
 at any given time or location (so long as distance from origin is less than 2, just a scaling thing). The catch is that a and
 b both change as:
 
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/t4CkdtC"><img src="https://i.imgur.com/t4CkdtC.png" title="source: imgur.com"/></a>
 
 and so we require Finite difference methods to numerically solve this over space and time. The function Solve_fieldlines takes
 some inputs that the FDM requires and outputs the plot of what the magnetic field looks like over all of space and at a 
