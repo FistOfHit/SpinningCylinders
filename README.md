@@ -48,7 +48,7 @@ To get a better idea of this, and certainly in a more quantitative way, make use
 press run (of course you can alter some values and initial conditions if you like). one of the results of the script
 will hopefully look like: 
 
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/kxhyyvW"><img src="https://i.imgur.com/kxhyyvW.png" title="source: imgur.com"/></a>
 
 With this, you should be able to tell from the gradient with which power the time taken for the solution to converge 
 changes as the value of n changes. Now you can change your value of "n" to whatever you wish to suit the inital 
@@ -60,7 +60,7 @@ to see how the largest possible value of time step size k changes with space ste
 perfect step size for accuracy and speed to acheive a solution at a certain point in time with fewer iterations.
 One of the result of this script should look like:
 
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/isns73R"><img src="https://i.imgur.com/isns73R.png" title="source: imgur.com"/></a>
 
 Which will let you quite easily see what the largest value of k for a specific h is. Now you as you increase h
 to get a more accurate solution in space, you can also increase k by a known amount to reduce the number of 
@@ -72,7 +72,7 @@ Finally, you can even see how a and b themselves vary over time at a certain rad
 function. Inputs are all explained in the code, but essentially you choose a certain radius and choose how long
 you want to record the values of a and b there, and get a nice plot showing the change, looking like this:
 
-<a href="https://imgur.com/HCmheJ3"><img src="https://i.imgur.com/HCmheJ3.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/PQUyQ6H"><img src="https://i.imgur.com/PQUyQ6H.png" title="source: imgur.com"/></a>
 
 Quite useful to get a rough and quick idea of when convergence might occur for given parameters. 
 
