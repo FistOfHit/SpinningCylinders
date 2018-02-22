@@ -29,7 +29,7 @@ institution, otherwise you can always adapt the code slightly and use it in GNU 
 
 ## Usage ##
 
-The code built here find the value of:
+The code built here finds the value of:
 
 <a href="https://imgur.com/7mlA8qP"><img src="https://i.imgur.com/7mlA8qP.png" title="source: imgur.com"/></a>
 
