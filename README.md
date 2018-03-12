@@ -1,4 +1,4 @@
-# Spinning-cylinders-in-a-B-field #
+# SpinningCylinders #
 
 A simulation of a conducting metal cylinder rotating inside of a constant magnetic field, developed initially just to see how the 
 magnetic field lines (contours of the B-field) change over time due to the rotation of the cylinder. Some pretty interesting results are 
